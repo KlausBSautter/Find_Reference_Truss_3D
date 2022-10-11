@@ -590,14 +590,13 @@ class system:
         
         print(' >> original problem solved')
 
-    def solve_original_problem_nonlinear(self):
+    def solve_original_problem_nonlinear(self,tollerance=1e-10,print_res=True,res_type="all"):
 
         print(' >> starting to solve original problem')
 
         for node_i in self.nodes:
             node_i.reset_reverse_node() # reset starting coordinates to found reference configuration for standard FEM analysis
 
-        toll = 1e-8
         res = 1e1
 
         count = 0
@@ -611,15 +610,35 @@ class system:
             dx = np.linalg.solve(C,-r)
             self.update_coordinates_solve_original_problem_nonlinear(dx)
 
-            res = max(np.linalg.norm(dx),np.linalg.norm(r))
-            print("disp residual: ", "{:e}".format(np.linalg.norm(dx)), "  |  ","force residual: ", "{:e}".format(np.linalg.norm(r)))
+            if res_type=="all":
+                res = max(np.linalg.norm(dx),np.linalg.norm(r))
+                if print_res: print("disp residual: ", "{:e}".format(np.linalg.norm(dx)), "  |  ","force residual: ", "{:e}".format(np.linalg.norm(r)))
+            elif res_type=="displacement":
+                res = np.linalg.norm(dx)
+                if print_res: print("disp residual: ", "{:e}".format(np.linalg.norm(dx)))
+            elif res_type=="force":
+                res = np.linalg.norm(r)
+                if print_res: print("force residual: ", "{:e}".format(np.linalg.norm(r)))
+            else:
+                raise ValueError("Residual type "+res_type+" not available!")
+
+
             
             count += 1
 
-            if abs(res) < toll:
+            if abs(res) < tollerance:
                 break
 
         print(' >> original problem solved')
+
+
+        #test 
+        if 1==2:
+            for node in self.nodes:
+                dofn = node.dofs
+                node.x0 = 0.0
+                node.y0 = 0.0
+                node.z0 = 0.0
 
     def update_coordinates_solve_original_problem_nonlinear(self,dx):
         for node in self.nodes:
