@@ -7,7 +7,7 @@ Find the unknown reference configuration for geometrically and materially nonlin
 You are welcome to contact me for further assistance.
 
 
-## Necessary Python packages
+## Necessary Python Packages
 
 You need to install `numpy` and `matplotlib`.
 
@@ -23,5 +23,9 @@ import sys
 pip install numpy matplotlib
 ```
 
-## Cite me
+## Create Input Data
+
+Input data can either be created manually via the Python code, or with the help of [Kratos Multiphysics](https://github.com/KratosMultiphysics/Kratos) and CAD system [GiD](https://www.gidsimulation.com/). 
+
+## Cite Me
 Klaus Bernd Sautter, Kai-Uwe Bletzinger, Hyper-Elastic Geometrically Nonlinear Inverse 3D-FEM Truss Analyses Based on VaReS, Advances in Civil Engineering (2022)
