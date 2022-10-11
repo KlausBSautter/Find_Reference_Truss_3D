@@ -25,7 +25,7 @@ pip install numpy matplotlib
 
 ## Create Input Data
 
-Input data can either be created manually via the Python code, or with the help of [Kratos Multiphysics](https://github.com/KratosMultiphysics/Kratos) and CAD system [GiD](https://www.gidsimulation.com/). 
+Input data can either be created manually via the Python code, or with the help of [Kratos Multiphysics](https://github.com/KratosMultiphysics/Kratos) and the CAD system [GiD](https://www.gidsimulation.com/). 
 
 ## Cite Me
 Klaus Bernd Sautter, Kai-Uwe Bletzinger, Hyper-Elastic Geometrically Nonlinear Inverse 3D-FEM Truss Analyses Based on VaReS, Advances in Civil Engineering (2022)
