@@ -29,3 +29,4 @@ Input data can either be created manually via the Python code, or with the help 
 
 ## Cite Me
 Klaus Bernd Sautter, Kai-Uwe Bletzinger, Hyper-Elastic Geometrically Nonlinear Inverse 3D-FEM Truss Analyses Based on VaReS, Advances in Civil Engineering (2022)
+http://dx.doi.org/10.1155/2022/3573608
